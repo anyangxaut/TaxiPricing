@@ -4,3 +4,5 @@ sudo: false
 
 jdk:
   - openjdk7
+  
+install: ant deps
