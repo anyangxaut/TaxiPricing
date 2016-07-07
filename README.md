@@ -2,7 +2,7 @@
 说明文档
 ****************************************************
 
-Master：https://travis-ci.org/anyangxaut/TaxiPricing.svg?branch=master
+Master：https://travis-ci.org/anyangxaut/TaxiPricing
 
 ## 问题描述
 
