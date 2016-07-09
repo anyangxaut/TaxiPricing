@@ -11,16 +11,22 @@ public class TaxiPricing {
     public static void main(String[] args) {
         TaxiPricing taxiPricing = new TaxiPricing();
         double distance = taxiPricing.getDistance();
-        TaxiCalculator calculator = new TaxiCalculator();
-        System.out.println("TaxiPrice is " + calculator.calculatePrice(distance) + " yuan.");
+        long time = 0;
+        TaxiCalculator calculator = new TaxiCalculator((int)distance, time);
+        System.out.println(taxiPricing.displayPrice(calculator));
     }
 
-    private double getDistance(){
+    public String displayPrice(TaxiCalculator calculator) {
+        int price = Math.round(calculator.calculate());
+        return String.format("TaxiPrice is %d yuan.", price);
+    }
+
+    private double getDistance() {
         Scanner scanner = new Scanner(System.in);
         double distance = scanner.nextDouble();
-        if(distance >= 0){
+        if (distance >= 0) {
             return distance;
-        }else{
+        } else {
             System.out.println("Input Distance Error！");
             return 0;
         }

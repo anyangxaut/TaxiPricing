@@ -4,6 +4,22 @@ public class TaxiCalculator {
 
     public static final int START_DISTANCE = 2;
 
+    private int distance;
+    private long time;
+
+    public TaxiCalculator(int distance, long time) {
+        this.distance = distance;
+        this.time = time;
+    }
+
+    public void setDistance(int distance) {
+        this.distance = distance;
+    }
+
+    public void setTime(long time) {
+        this.time = time;
+    }
+
     int calculatePriceInLevel1() {
         return 6;
     }
@@ -26,5 +42,9 @@ public class TaxiCalculator {
         } else {
             return 0;
         }
+    }
+
+    public float calculate() {
+        return 0;
     }
 }
