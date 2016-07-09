@@ -3,7 +3,7 @@ package edu.xaut;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class CalculatorStartPriceTest {
 
@@ -19,9 +19,9 @@ public class CalculatorStartPriceTest {
         int distance = TaxiCalculator.START_DISTANCE;
         long time = 60000;
 
-        int money = startPrice.calculate(distance, time);
+        float money = startPrice.calculate(distance, time);
 
-        assertEquals(6, money);
+        assertEquals(6.25, money, 0.01);
     }
 
     @Test
@@ -29,9 +29,9 @@ public class CalculatorStartPriceTest {
         int distance = 1;
         long time = 0;
 
-        int money = startPrice.calculate(distance, time);
+        float money = startPrice.calculate(distance, time);
 
-        assertEquals(6, money);
+        assertEquals(6.0, money, 0.01);
     }
 
     @Test
@@ -39,9 +39,8 @@ public class CalculatorStartPriceTest {
         int distance = 1;
         long time = 120000;
 
-        int money = startPrice.calculate(distance, time);
+        float money = startPrice.calculate(distance, time);
 
-        assertEquals(7, money);
-
+        assertEquals(6.5, money, 0.01);
     }
 }

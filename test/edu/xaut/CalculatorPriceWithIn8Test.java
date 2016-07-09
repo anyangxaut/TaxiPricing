@@ -19,8 +19,8 @@ public class CalculatorPriceWithIn8Test {
         int distance = 4;
         long time = 6 * 60 * 1000;
 
-        int money = priceWithIn8.calculate(distance, time);
+        float money = priceWithIn8.calculate(distance, time);
 
-        assertEquals(money, 9);
+        assertEquals(money, 9.1, 0.01);
     }
 }
