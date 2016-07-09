@@ -16,7 +16,7 @@ public class CalculatorStartPriceTest {
 
     @Test
     public void testCalculatePriceIsStartPriceWhenDistanceIsEqualStartDistance() throws Exception {
-        int distance = TaxiCalculator.START_DISTANCE;
+        int distance = 2;
         long time = 60000;
 
         float money = startPrice.calculate(distance, time);

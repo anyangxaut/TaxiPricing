@@ -2,7 +2,8 @@ package edu.xaut;
 
 public class TaxiCalculator {
 
-    public static final int START_DISTANCE = 2;
+    private static final int START_DISTANCE = 2;
+    private static final int MORE_THAN_DISTANCE = 8;
 
     private int distance;
     private long time;
@@ -20,31 +21,16 @@ public class TaxiCalculator {
         this.time = time;
     }
 
-    int calculatePriceInLevel1() {
-        return 6;
-    }
-
-    int calculatePriceInLevel2(double distance) {
-        return (int) Math.round(0.8 * (distance - 2) + 6);
-    }
-
-    int calculatePriceInLevel3(double distance) {
-        return (int) Math.round((0.8 * (distance - 2)) + 6 + (0.4 * (distance - 8)));
-    }
-
-    public int calculatePrice(double distance) {
-        if (distance > 8) {
-            return calculatePriceInLevel3(distance);
-        } else if (distance > 2) {
-            return calculatePriceInLevel2(distance);
-        } else if (distance > 0) {
-            return calculatePriceInLevel1();
-        } else {
-            return 0;
-        }
-    }
-
     public float calculate() {
-        return 0;
+        Context context;
+        if (distance > MORE_THAN_DISTANCE) {
+            context = new Context(new CalculatorPriceMoreThan8());
+        } else if (distance > START_DISTANCE) {
+            context = new Context(new CalculatorPriceWithIn8());
+        } else {
+            context = new Context(new CalculatorStartPrice());
+        }
+        return context.operator(distance, time);
     }
 }
+
