@@ -11,34 +11,11 @@ public class TaxiPricing {
     public static void main(String[] args) {
         TaxiPricing taxiPricing = new TaxiPricing();
         double distance = taxiPricing.getDistance();
-        System.out.println("TaxiPrice is " + taxiPricing.calculatePrice(distance) + " yuan.");
+        TaxiCalculator calculator = new TaxiCalculator();
+        System.out.println("TaxiPrice is " + calculator.calculatePrice(distance) + " yuan.");
     }
 
-    public int calculatePriceInLevel1(){
-        return 6;
-    }
-
-    public int calculatePriceInLevel2(double distance){
-        return (int)Math.round(0.8 * (distance - 2) + 6);
-    }
-
-    public int calculatePriceInLevel3(double distance){
-        return (int)Math.round((0.8 * (distance - 2)) + 6 + (0.4 * (distance - 8)));
-    }
-
-    public int calculatePrice(double distance){
-        if (distance > 8){
-            return calculatePriceInLevel3(distance);
-        }else if (distance > 2){
-            return calculatePriceInLevel2(distance);
-        }else if (distance > 0){
-            return calculatePriceInLevel1();
-        }else {
-            return 0;
-        }
-    }
-
-    public double getDistance(){
+    private double getDistance(){
         Scanner scanner = new Scanner(System.in);
         double distance = scanner.nextDouble();
         if(distance >= 0){
