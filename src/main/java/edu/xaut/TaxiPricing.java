@@ -1,5 +1,7 @@
 package edu.xaut;
 
+import edu.xaut.utils.ScannerWrapper;
+
 import java.util.Scanner;
 
 /*
@@ -10,7 +12,7 @@ public class TaxiPricing {
 
     public static void main(String[] args) {
         TaxiPricing taxiPricing = new TaxiPricing();
-        double distance = taxiPricing.getDistance();
+        double distance = taxiPricing.getDistance(new ScannerWrapper(new Scanner(System.in)));
         long time = 0;
         TaxiCalculator calculator = new TaxiCalculator((int)distance, time);
         System.out.println(taxiPricing.displayPrice(calculator));
@@ -21,10 +23,9 @@ public class TaxiPricing {
         return String.format("TaxiPrice is %d yuan.", price);
     }
 
-    private double getDistance() {
-        Scanner scanner = new Scanner(System.in);
-        double distance = scanner.nextDouble();
-        if (distance >= 0) {
+    public double getDistance(ScannerWrapper scanner) {
+        double distance = scanner.getValue();
+        if (distance > 0) {
             return distance;
         } else {
             System.out.println("Input Distance Error！");
