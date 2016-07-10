@@ -10,8 +10,8 @@ Master：https://travis-ci.org/anyangxaut/TaxiPricing
 
 ## 思路说明
 
-	Level1: Price = 6  when 0 < distance <= 2;
-	Level2: Price = 0.8 * (distance - 2) + 6  when 2 < distance <= 8;
-	Level3: Price = 0.8 * (distance - 2) + 6 + 0.4 * (distance - 8)  when distance > 8;
+	Level1: Price = 6 + 0.25 * time when 0 < distance <= 2;
+	Level2: Price = 0.8 * (distance - 2) + 6 + 0.25 * time  when 2 < distance <= 8;
+	Level3: Price = 0.8 * (distance - 2) + 6 + 0.4 * (distance - 8) + 0.25 * time  when distance > 8;
 
 
