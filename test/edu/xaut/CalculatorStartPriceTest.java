@@ -35,7 +35,7 @@ public class CalculatorStartPriceTest {
     }
 
     @Test
-    public void testCalulatePriceIsStartPriceIsNot0() throws Exception {
+    public void testCalulatePriceIsStartPriceWhenTimeIsNot0() throws Exception {
         int distance = 1;
         long time = 120000;
 

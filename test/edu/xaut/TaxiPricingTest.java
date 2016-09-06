@@ -50,7 +50,7 @@ public class TaxiPricingTest {
     }
 
     @Test
-    public void testGetDistanceZeroInvalidate() throws Exception {
+    public void testGetDistanceInvalidate() throws Exception {
         ScannerWrapper scanner = mock(ScannerWrapper.class);
         when(scanner.getValue()).thenReturn(0.0);
 

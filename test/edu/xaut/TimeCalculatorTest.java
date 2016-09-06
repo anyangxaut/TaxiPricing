@@ -18,7 +18,7 @@ public class TimeCalculatorTest {
 
     @Test
     public void testTimeCalculator() throws Exception {
-        long time= 4 * 60 * 1000;
+        long time = 4 * 60 * 1000;
 
         float price = timeCalculator.calculate(time);
 

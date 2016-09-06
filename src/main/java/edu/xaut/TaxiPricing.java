@@ -28,7 +28,7 @@ public class TaxiPricing {
         if (distance > 0) {
             return distance;
         } else {
-            System.out.println("Input Distance Error！");
+            System.out.println("Input Distance Error！"); //用异常代替错误输出
             return 0;
         }
     }

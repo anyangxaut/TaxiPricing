@@ -13,14 +13,6 @@ public class TaxiCalculator {
         this.time = time;
     }
 
-    public void setDistance(int distance) {
-        this.distance = distance;
-    }
-
-    public void setTime(long time) {
-        this.time = time;
-    }
-
     public float calculate() {
         Context context;
         if (distance > MORE_THAN_DISTANCE) {
